@@ -1,0 +1,31 @@
+✔ Create a File
+touch file1.txt
+
+✔ Write Into File
+echo "Hello World" > file1.txt
+
+✔ Append to File
+echo "More text" >> file1.txt
+
+✔ Read File
+cat file1.txt
+
+✔ Delete File
+rm file1.txt
+
+
+
+✔ Create Directory
+mkdir mydir
+
+✔ Change Directory
+cd mydir
+
+✔ List Directory Contents
+ls
+
+✔ Remove Directory (empty)
+rmdir mydir
+
+✔ Remove Directory with files
+rm -r mydir
