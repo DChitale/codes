@@ -1,72 +1,23 @@
-========================================
-HOW TO RUN JAVA RMI APPLICATION
-========================================
+Steps to Run
+Step 1: Compile all Java files
 
-STEP 1: Compile all Java files
--------------------------------
-javac CalculatorInterface.java
-javac CalculatorImpl.java
-javac Server.java
-javac Client.java
-
-OR compile all at once:
-javac *.java
+bash
+javac Hello.java HelloImpl.java Server.java Client.java
+Step 2: Start the RMI Registry
 
 
-STEP 2: Start the Server
--------------------------
+cd D:\RMI
+java -cp . Server
+
+
+cd D:\RMI
+java -cp . Client
+
+bash
+rmiregistry
+Step 3: Run the Server (in a new terminal)
+
+bash
 java Server
+Step 4: Run the Client (in another new terminal)
 
-You should see:
-- "Starting RMI Registry on port 1099..."
-- "Creating Calculator remote object..."
-- "Server is ready and waiting for client requests..."
-- "Calculator service bound to: rmi://localhost:1099/CalculatorService"
-
-Keep this terminal/command prompt window open!
-
-
-STEP 3: Run the Client (in a NEW terminal/command prompt)
-----------------------------------------------------------
-Open a NEW terminal/command prompt window
-Navigate to the same directory
-Run: java Client
-
-You should see the client performing calculations:
-- "Looking up Calculator service..."
-- "Successfully connected to Calculator service!"
-- Results of add, subtract, multiply, and divide operations
-
-
-TROUBLESHOOTING:
-----------------
-1. If you get "Connection refused":
-   - Make sure the Server is running first
-   - Check that port 1099 is not blocked by firewall
-
-2. If you get "ClassNotFoundException":
-   - Make sure all files are compiled
-   - Run from the correct directory
-
-3. If you get "AlreadyBoundException":
-   - The server is already running
-   - Stop the previous server instance first
-
-4. To stop the server:
-   - Press Ctrl+C in the server terminal
-
-
-FILE STRUCTURE:
----------------
-1. CalculatorInterface.java - Remote interface (defines contract)
-2. CalculatorImpl.java - Implementation (business logic)
-3. Server.java - Server setup (creates registry and binds object)
-4. Client.java - Client application (uses remote object)
-
-
-NOTES:
-------
-- Server must be started before Client
-- Both must run on the same machine (localhost) or update the URL
-- Default RMI registry port is 1099
-- The service name is "CalculatorService"
