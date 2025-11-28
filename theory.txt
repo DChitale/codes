@@ -1,0 +1,358 @@
+Below is *clean, exam–ready THEORY for every practical* you listed.
+You can directly *paste this into your journal*.
+If you want, I can convert this into a *PDF* or *formatted practical journal*.
+
+---
+
+# ✅ *1. Study and Installation of a Linux-based OS (Ubuntu/Fedora) & Basic Shell Usage*
+
+### *Objective*
+
+To understand Linux operating system architecture, installation steps, and essential shell commands.
+
+### *Theory*
+
+Linux is an open-source OS based on the Unix architecture. It uses a monolithic kernel, provides multitasking, multiuser support, and POSIX compliance.
+
+### *Installation Steps*
+
+1. Download ISO image (Ubuntu/Fedora).
+2. Create bootable USB using Rufus / BalenaEtcher.
+3. Boot system into USB.
+4. Partition disk and select installation location.
+5. Install GRUB bootloader.
+6. Reboot and configure user account.
+
+### *Basic Shell Usage*
+
+* pwd – print working directory
+* ls – list files
+* cd – change directory
+* cp, mv, rm – file operations
+* chmod, chown – permissions
+* grep, awk, sed – text processing
+* ps, top – process management
+
+---
+
+# ✅ *2. Exploring Android Emulator Internals & Mobile OS Structure*
+
+### *Objective*
+
+To study internal working of Android OS using Emulator.
+
+### *Theory*
+
+Android is a Linux-based mobile OS with components:
+
+* *Linux Kernel* (hardware abstraction)
+* *HAL (Hardware Abstraction Layer)*
+* *Native Libraries* (SQLite, WebKit)
+* *Android Runtime (ART)*
+* *Application Framework*
+* *Apps*
+
+Android Emulator exposes:
+
+* File system (/system, /data)
+* Log system (logcat)
+* Virtual CPU, RAM, networking
+* APK installation lifecycle
+  This helps understand boot sequence, process isolation (UID-based), sandboxing, Binder IPC.
+
+---
+
+# ✅ *3. Simulation of CPU Scheduling Algorithms – FCFS & SJF*
+
+### *Objective*
+
+To simulate CPU scheduling policies and calculate metrics.
+
+### *Theory*
+
+CPU scheduling selects processes from ready queue.
+
+### *FCFS*
+
+* Non-preemptive
+* Processes served in arrival order
+* Simple but causes convoy effect
+
+### *SJF*
+
+* Non-preemptive / preemptive
+* Shortest burst time first
+* Optimal for average waiting time
+* Requires knowledge of burst time
+
+### *Performance Metrics*
+
+* Waiting Time
+* Turnaround Time
+* Response Time
+* Throughput
+
+---
+
+# ✅ *4. Simulation of CPU Scheduling – Round Robin & Priority*
+
+### *Round Robin (RR)*
+
+* Time-sharing algorithm
+* Each process gets fixed time quantum
+* Preemptive
+* Fair but too small quantum increases overhead
+
+### *Priority Scheduling*
+
+* Each process assigned priority
+* Can be preemptive or non-preemptive
+* Low-priority starvation possible
+* Aging used to avoid starvation
+
+---
+
+# ✅ *5. Multithreading & Synchronization – Readers–Writers Problem (Python Threads)*
+
+### *Objective*
+
+Solve synchronization issues using locks.
+
+### *Theory*
+
+Readers–Writers Problem manages access to shared data:
+
+* Multiple readers can read simultaneously
+* Writers need exclusive access
+
+### *Concepts*
+
+* Thread
+* Lock (mutex)
+* Semaphore
+* Race conditions
+* Critical section
+
+Synchronization ensures:
+
+* Mutual exclusion
+* No starvation
+* Bounded waiting
+
+---
+
+# ✅ *6. Multithreading & Synchronization – Producer–Consumer Problem (Python Threads)*
+
+### *Theory*
+
+Producer generates data → Consumer uses data.
+
+Key requirements:
+
+* Prevent buffer overflow (Producer waits)
+* Prevent underflow (Consumer waits)
+
+Uses:
+
+* Bounded Buffer
+* Semaphores: *empty, **full, **mutex*
+
+Illustrates classic IPC and synchronization.
+
+---
+
+# ✅ *7. Readers–Writers Problem Using Monitors*
+
+### *Theory*
+
+Monitor = high-level synchronization construct containing:
+
+* Shared variables
+* Procedures
+* Condition variables
+
+Monitors ensure *automatic mutual exclusion*.
+
+Readers–Writers using monitor protects shared data with monitor-controlled access rules.
+
+---
+
+# ✅ *8. Banker's Algorithm Simulation (Deadlock Avoidance)*
+
+### *Objective*
+
+Avoid deadlock by allocating resources safely.
+
+### *Theory*
+
+Banker’s algorithm checks whether the system is in a *safe state* before allocating resources.
+
+### *Components*
+
+* Max matrix
+* Allocation matrix
+* Need matrix
+* Available vector
+
+### *Process*
+
+1. Check if resources can be safely allocated.
+2. If safe sequence exists → allocate.
+3. Else → block request to avoid deadlock.
+
+Used in OS for resource management.
+
+---
+
+# ✅ *9. Page Replacement Simulation (FIFO, LRU, Optimal)*
+
+### *Objective*
+
+Evaluate page faults for different algorithms.
+
+### *FIFO*
+
+* First page loaded is replaced first
+* Simple but suffers from Belady’s anomaly
+
+### *LRU*
+
+* Replace page least recently used
+* Better performance
+* Needs timestamp or stack implementation
+
+### *Optimal*
+
+* Replace page not needed for longest future time
+* Lowest possible page faults
+* Not practical in real systems
+
+---
+
+# ✅ *10. File System Operations in C, Java & Linux Shell*
+
+### *Objective*
+
+Perform creation, deletion, access & directory handling.
+
+### *Theory*
+
+File system manages storage and directory structure.
+
+### *Operations*
+
+* Create, open, read, write, close
+* Change directory
+* List files
+* File permissions
+* Directory traversal
+
+### *APIs*
+
+* *C*: open(), read(), write(), mkdir()
+* *Java*: File, FileInputStream, Files API
+* *Shell*: touch, cat, cp, mv, rm, mkdir, rmdir
+
+---
+
+# ✅ *11. IPC Using Sockets in Python*
+
+### *Theory*
+
+IPC using sockets allows communication between two processes through:
+
+* TCP (reliable)
+* UDP (fast)
+
+Server:
+
+* Bind → listen → accept → respond
+  Client:
+* Connect → send → receive
+
+Used in distributed systems, chat servers, APIs.
+
+---
+
+# ✅ *12. IPC Using Shared Memory in Python*
+
+### *Theory*
+
+Fastest IPC mechanism.
+
+Shared memory segment allows *multiple processes to access same memory*.
+
+Requires mutex/semaphore to prevent race conditions.
+
+---
+
+# ✅ *13. RPC Using Java RMI*
+
+### *Theory*
+
+Remote Method Invocation allows Java program to call a method on a remote object.
+
+Components:
+
+* Remote Interface
+* Remote Object
+* Stub & Skeleton
+* RMI Registry
+
+Uses serialization to transfer data across JVMs.
+
+---
+
+# ✅ *14. Lamport Logical Clocks & Distributed Mutual Exclusion*
+
+### *Lamport Clock*
+
+Assigns logical timestamps to events.
+
+Rules:
+
+* Increment on event
+* Send timestamp with message
+* Receiver updates timestamp
+
+### *Mutual Exclusion*
+
+Lamport’s algorithm:
+
+* Request → Reply → Critical Section → Release
+* Ensures fairness based on timestamp ordering
+
+---
+
+# ✅ *15. Simulation of HDFS or Simple Distributed File System*
+
+### *Theory*
+
+HDFS = Hadoop Distributed File System.
+
+Architecture:
+
+* *NameNode* – metadata
+* *DataNode* – stores actual blocks
+* Replication ensures fault tolerance
+
+Simulation includes:
+
+* Splitting files into blocks
+* Replicating blocks
+* Maintaining metadata
+* Read/Write operations
+
+---
+
+Hadoop - Architecture
+Last Updated : 12 Aug, 2025
+Hadoop is an open-source Java framework that stores and processes massive data using clusters of inexpensive (commodity) hardware. Based on Google’s MapReduce programming model, it enables distributed, parallel processing. Big companies like Facebook, Yahoo, Netflix and eBay use Hadoop to handle large-scale data efficiently.
+
+Components of Hadoop Architecture
+Hadoop Architecture Mainly consists of 4 components:
+
+MapReduce
+HDFS (Hadoop Distributed File System)
+YARN (Yet Another Resource Negotiator)
+Common Utilities or Hadoop Common
